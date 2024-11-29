@@ -33,6 +33,7 @@ height: auto;
 
 img {
   width: 120px;
+  image-rendering: optimizeSpeed;
 }
 
 body {
@@ -45,6 +46,12 @@ body {
   background-image: radial-gradient(circle, #ffffff10 1px, rgba(0, 0, 0, 0) 1px);
 }
 
+h1 {
+  color: white;
+  position: absolute;
+  top: 20px;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -54,6 +61,7 @@ body {
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 50px;
 }
 
 .card {
