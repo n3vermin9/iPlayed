@@ -67,9 +67,9 @@ h1 {
 .card {
   max-width: 300px;
   height: 205px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   background: rgba(44, 44, 44, 0.5);
-  backdrop-filter: blur(1px); 
+  /* backdrop-filter: blur(1px);  */
+  position: relative;
   border: 1px solid #ffffff10;
   border-radius: 9px;
   overflow: hidden;
@@ -77,10 +77,6 @@ h1 {
   margin-bottom: 40px;
   flex: 1 1 calc(33.333% - 20px); /* Default for larger screens */
   min-width: 250px; /* Ensures cards remain readable */
-}
-
-.card * {
-  /* border: 1px solid red; */
 }
 
 img {
