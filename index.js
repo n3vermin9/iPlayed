@@ -4,6 +4,11 @@ const container = document.querySelector('.container')
 
 const input = document.querySelector('.input');
 
+
+document.addEventListener('DOMContentLoaded', function() {
+  input.value = '';
+});
+
 function createCard(gameName, imageSrc, rating) {
   // Create card element
   const card = document.createElement('div');
@@ -48,7 +53,8 @@ function createCard(gameName, imageSrc, rating) {
   return card;
 }
 
-// Assuming 'container' and 'input' are already defined, and 'games' is an array available in your scope
+games.sort((a, b) => b.rate - a.rate);
+
 
 function renderCards() {
   // Clear existing cards

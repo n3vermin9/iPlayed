@@ -26,15 +26,6 @@ padding: 0;
 ol, ul {
 list-style: none;
 }
-img {
-max-width: 100%;
-height: auto;
-}
-
-img {
-  width: 120px;
-  /* image-rendering: optimizeSpeed; */
-}
 
 body {
   display: flex;
@@ -50,7 +41,10 @@ body {
 nav {
   width: 80%;
   max-width: 1000px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background: #000;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -85,6 +79,7 @@ input {
   display: flex;
   flex-wrap: wrap;
   position: relative;
+  top: 80px;
 }
 
 .card {
@@ -164,6 +159,7 @@ p {
 
   .container{
     justify-content: center;
+    top: 140px;
   }
 }
 
