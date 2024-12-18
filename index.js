@@ -2,6 +2,8 @@ import { games } from './games.js';
 
 const container = document.querySelector('.container')
 
+const input = document.querySelector('.input');
+
 function createCard(gameName, imageSrc, rating) {
   // Create card element
   const card = document.createElement('div');
@@ -40,14 +42,48 @@ function createCard(gameName, imageSrc, rating) {
     }
   }
 
-  // Append image, name, and rating to the card
   card.appendChild(img);
   card.appendChild(name);
   card.appendChild(rate);
   return card;
 }
 
-for (let i = 0; i < games.length; i++) {
-  const card1 = createCard(games[i].game, games[i].link, games[i].rate)
-  container.appendChild(card1);
+// Assuming 'container' and 'input' are already defined, and 'games' is an array available in your scope
+
+function renderCards() {
+  // Clear existing cards
+  const cardElements = container.querySelectorAll('.card');
+  cardElements.forEach(card => {
+    container.removeChild(card);
+  });
+
+  // Add cards based on the current input value
+  for (let i = 0; i < games.length; i++) {
+    const card1 = createCard(games[i].game, games[i].link, games[i].rate);
+    container.appendChild(card1);
+  }
 }
+
+// Initial rendering of cards
+renderCards();
+
+input.addEventListener('input', () => {
+  if (input.value.length === 0) {
+    // Clear existing cards and display all
+    renderCards();
+  } else {
+    // Clear existing cards first
+    const cardElements = container.querySelectorAll('.card');
+    cardElements.forEach(card => {
+      container.removeChild(card);
+    });
+
+    // Filter and render cards based on input value
+    for (let i = 0; i < games.length; i++) {
+      if (games[i].game.toLowerCase().includes(input.value.toLowerCase())) {
+        const card1 = createCard(games[i].game, games[i].link, games[i].rate);
+        container.appendChild(card1);
+      }
+    }
+  }
+});

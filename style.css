@@ -33,11 +33,12 @@ height: auto;
 
 img {
   width: 120px;
-  image-rendering: optimizeSpeed;
+  /* image-rendering: optimizeSpeed; */
 }
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -46,10 +47,31 @@ body {
   background-image: radial-gradient(circle, #ffffff10 1px, rgba(0, 0, 0, 0) 1px);
 }
 
+nav {
+  width: 80%;
+  max-width: 1000px;
+  position: relative;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
 h1 {
   color: white;
-  position: absolute;
-  top: 20px;
+}
+
+input {
+  height: 50px;
+  width: 300px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background: rgba(44, 44, 44, 0.5);
+  border: 1px solid #ffffff20;
+  border-radius: 16px;
+  color: white;
+  font-size: 18px;
+  padding: 0 14px 0 14px;
 }
 
 .container {
@@ -58,10 +80,11 @@ h1 {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 50px;
+  position: relative;
 }
 
 .card {
@@ -119,4 +142,68 @@ p {
   .container{
     justify-content: center;
   }
+}
+
+@media (max-width: 676px) {
+  nav {
+    flex-direction: column;
+    height: 140px;
+  }
+
+  h1 {
+    position: absolute;
+    top: 20px;
+  }
+
+  .input {
+    width: 90%;
+    height: 50px;
+    position: absolute;
+    bottom: 10px;
+  }
+
+  .container{
+    justify-content: center;
+  }
+}
+
+/* Custom scrollbar styles for Webkit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Thin scrollbar width */
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+  background: transparent; /* Track color */
+}
+
+/* Scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5); /* Thumb color */
+  border-radius: 10px; /* Optional: rounded corners */
+}
+
+/* Scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.8); /* Thumb color on hover */
+}
+
+html {
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+* {
+  scrollbar-width: none; /* Firefox */
+}
+
+.input::selection {
+  background-color: palevioletred; /* Background color of the selected text */
+}
+
+.input::-moz-selection {
+  background-color: palevioletred; /* Background color of the selected text */
+}
+
+.scrollable-content::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar in WebKit-based browsers */
 }
